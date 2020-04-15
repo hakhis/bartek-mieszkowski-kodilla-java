@@ -57,7 +57,7 @@ public class ShapeCollectorTestSuite {
         Assert.assertEquals(figure, result);
 
     }
-
+/*
     @Test
     public void testShowFigures(){
         //Given
@@ -77,5 +77,5 @@ public class ShapeCollectorTestSuite {
         //Then
         Assert.assertEquals(expectedFigures, resultFigures);
     }
-
+*/
 }
