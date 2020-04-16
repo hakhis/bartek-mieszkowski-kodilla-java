@@ -3,17 +3,12 @@ package com.kodilla.testing.forum.statistics;
 import java.util.List;
 
 public class ForumStatistics {
-    Statistics statistics;
     private int userCount;                  //liczbę użytkowników,
     private int postCount;                  //liczbę postów,
     private int commentCount;               //liczbę komentarzy,
     private double averagePostsPerUser;     //średnią liczbę postów na użytkownika,
     private double averageCommentsPerUser;  //średnią liczbę komentarzy na użytkownika,
     private double averageCommentsPerPost;  //średnią liczbę komentarzy na post.
-
-    public ForumStatistics(Statistics statistics) {
-        this.statistics = statistics;
-    }
 
     public int getUserCount() {
         return userCount;
@@ -43,9 +38,15 @@ public class ForumStatistics {
         userCount = statistics.usersNames().size();
         postCount = statistics.postsCount();
         commentCount = statistics.commentsCount();
-        averagePostsPerUser = postCount / userCount;
-        averageCommentsPerUser = commentCount / userCount;
-        averageCommentsPerPost = commentCount / postCount;
+        if (userCount != 0) {
+            averagePostsPerUser = (double) postCount / userCount;
+        } else averageCommentsPerUser = 0;
+        if (userCount != 0) {
+            averageCommentsPerUser = (double) commentCount / userCount;
+        } else averageCommentsPerUser = 0;
+        if (postCount != 0) {
+            averageCommentsPerPost = (double) commentCount / postCount;
+        } else averageCommentsPerPost = 0;
     }
 
     public void showStatistics(){
