@@ -56,7 +56,7 @@ public class ShapeCollectorTestSuite {
         Shape result = shapeCollector.getFigure(0);
         //Then
         Assert.assertEquals(figure, result);
-
+        Object o;
     }
 
 /*
