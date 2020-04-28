@@ -1,7 +1,27 @@
 package com.kodilla.exception.test;
 
-public class FlightFinder {
-    public void findFlight(Flight flight) {
+import java.util.HashMap;
+import java.util.Map;
 
+public class FlightFinder {
+    private Map<String, Boolean> availableDestinations = new HashMap<>();
+
+    public FlightFinder() {
+        availableDestinations.put("Warsaw", true);
+        availableDestinations.put("Bangkok", false);
+        availableDestinations.put("Hanoi", true);
+        availableDestinations.put("Berlin", true);
+    }
+
+    public void findFlight(Flight flight) throws RouteNotFoundException {
+        if (availableDestinations.get(flight.getArrivalAirport()) != null && availableDestinations.get(flight.getDepartureAirport()) != null) {
+            if (availableDestinations.get(flight.getArrivalAirport())) {
+                System.out.println("Direct flight from " + flight.getDepartureAirport() + " to " + flight.getArrivalAirport() + " is available");
+            } else {
+                System.out.println("There is no direct flight from " + flight.getDepartureAirport() + " to " + flight.getArrivalAirport());
+            }
+        } else {
+            throw new RouteNotFoundException("No such flight found!");
+        }
     }
 }
