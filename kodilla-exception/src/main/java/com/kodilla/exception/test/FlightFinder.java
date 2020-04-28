@@ -14,7 +14,7 @@ public class FlightFinder {
     }
 
     public void findFlight(Flight flight) throws RouteNotFoundException {
-        if (availableDestinations.get(flight.getArrivalAirport()) != null && availableDestinations.get(flight.getDepartureAirport()) != null) {
+        if (availableDestinations.containsKey(flight.getArrivalAirport())) {
             if (availableDestinations.get(flight.getArrivalAirport())) {
                 System.out.println("Direct flight from " + flight.getDepartureAirport() + " to " + flight.getArrivalAirport() + " is available");
             } else {
