@@ -9,11 +9,10 @@ public class MovieStoreReader {
     public static void main(String[] args) {
         Map<String, List<String>> map = MovieStore.getMovies();
         List<String> movieList = map.entrySet().stream()
-                .flatMap(e -> e.getValue().stream()
-                .map(l -> ))
-
+                .flatMap(e -> e.getValue().stream())
+                .map(e -> e + " ! ")
                 .collect(Collectors.toList());
-        movieList.stream().forEach(System.out::println);
+        movieList.stream().forEach(System.out::print);
 
     }
 }
