@@ -1,7 +1,5 @@
 package com.kodilla.good.patterns.challenges.allegro;
 
-import java.util.Date;
-
 public class Book implements Product {
     private String title;
     private String author;
@@ -14,32 +12,6 @@ public class Book implements Product {
         this.author = author;
         this.publicationDate = publicationDate;
         this.productID = productID;
-        this.quantity = quantity;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public int getPublicationDate() {
-        return publicationDate;
-    }
-
-    public int getProductID() {
-        return productID;
-    }
-
-    @Override
-    public int getQuantity() {
-        return quantity;
-    }
-
-    @Override
-    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
