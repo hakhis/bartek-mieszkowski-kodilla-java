@@ -1,7 +1,5 @@
 package com.kodilla.good.patterns.challenges.food2door.producers;
 
-import com.kodilla.good.patterns.challenges.food2door.producers.Producer;
-
 import java.util.ArrayList;
 import java.util.List;
 
