@@ -14,14 +14,19 @@ public class ExtraFoodShop implements Producer {
     }
     @Override
     public boolean process(String name, int amount) {
-        if (productList.get(name) >= amount) {
-            int newAmount = productList.get(name) - amount;
-            productList.replace(name, newAmount);
-            System.out.println("You have bought " + amount + " " + name);
-            System.out.println("Only " + newAmount + " of it left!");
-            return true;
+        if (productList.containsKey(name)) {
+            if (productList.get(name) >= amount) {
+                int newAmount = productList.get(name) - amount;
+                productList.replace(name, newAmount);
+                System.out.println("You have bought " + amount + " " + name);
+                System.out.println("Only " + newAmount + " of it left!");
+                return true;
+            } else {
+                System.out.println("Sorry! We have only " + productList.get(name) + " in stock!");
+                return false;
+            }
         } else {
-            System.out.println("Sorry! We have only " + productList.get(name) + " in stock!");
+            System.out.println("Sorry, we do not have this product!");
             return false;
         }
     }

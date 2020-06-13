@@ -13,4 +13,15 @@ public class SampleProduct implements Product {
     public String getName() {
         return name;
     }
+
+    @Override
+    public int getAmount() {
+        return amount;
+    }
+
+    @Override
+    public String toString() {
+        return name +
+                " in amount of " + amount;
+    }
 }
