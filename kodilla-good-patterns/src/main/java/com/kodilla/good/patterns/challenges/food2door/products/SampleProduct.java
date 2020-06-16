@@ -21,7 +21,6 @@ public class SampleProduct implements Product {
 
     @Override
     public String toString() {
-        return name +
-                " in amount of " + amount;
+        return name + " in amount of " + amount;
     }
 }

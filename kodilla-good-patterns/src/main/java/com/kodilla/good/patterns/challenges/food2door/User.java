@@ -23,8 +23,11 @@ public class User {
         return true;
     }
 
-    public List<Product> showBasket() {
-        return shoppingBasket;
+    public void showBasket() {
+        System.out.println("Content of " + userName + " basket:");
+        for (Product p : shoppingBasket) {
+            System.out.println(p);
+        }
     }
 
     @Override
