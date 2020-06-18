@@ -4,7 +4,7 @@ public class Application {
     public static void main(String[] args) {
         DataPreparator dataPreparator = new DataPreparator();
         dataPreparator.prepareSampleData();
-        OrderExecutor orderExecutor = new OrderExecutor(new ConsoleInfoService());
+        OrderExecutor orderExecutor = new OrderExecutor(new ConsoleInfoService(), dataPreparator.getProducersList());
         orderExecutor.execute(dataPreparator.getOrderList().get(0));
         orderExecutor.execute(dataPreparator.getOrderList().get(1));
         orderExecutor.execute(dataPreparator.getOrderList().get(2));

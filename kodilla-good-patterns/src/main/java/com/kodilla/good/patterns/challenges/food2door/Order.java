@@ -6,9 +6,9 @@ import com.kodilla.good.patterns.challenges.food2door.products.Product;
 public class Order {
     private User user;
     private Product product;
-    private Producer producer;
+    private String producer;
 
-    public Order(User user, Product product, Producer producer) {
+    public Order(User user, Product product, String producer) {
         this.user = user;
         this.product = product;
         this.producer = producer;
@@ -22,7 +22,7 @@ public class Order {
         return product;
     }
 
-    public Producer getProducer() {
+    public String getProducer() {
         return producer;
     }
 }
