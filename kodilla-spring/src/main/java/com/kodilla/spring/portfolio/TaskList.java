@@ -9,4 +9,19 @@ public class TaskList {
     public TaskList() {
         tasks = new ArrayList<>();
     }
+
+    public void addTask(String task) {
+        tasks.add(task);
+    }
+
+    public List<String> getTasks() {
+        return tasks;
+    }
+
+    @Override
+    public String toString() {
+        return "TaskList{" +
+                "tasks=" + tasks +
+                '}';
+    }
 }
