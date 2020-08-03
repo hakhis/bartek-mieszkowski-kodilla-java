@@ -51,10 +51,10 @@ public class InvoiceDaoTestSuite {
         productDao.save(brick);
         productDao.save(plank);
         productDao.save(nail);
+        invoiceDao.save(invoice);
         itemDao.save(item1);
         itemDao.save(item2);
         itemDao.save(item3);
-        invoiceDao.save(invoice);
         int invoiceId = invoice.getId();
 
         //Then
@@ -62,7 +62,13 @@ public class InvoiceDaoTestSuite {
 
         //CleanUp
         try {
-            invoiceDao.deleteById(invoiceId);
+            itemDao.delete(item1);
+            itemDao.delete(item2);
+            itemDao.delete(item3);
+            invoiceDao.delete(invoice);
+            productDao.delete(brick);
+            productDao.delete(plank);
+            productDao.delete(nail);
         } catch (Exception e) {
             //do nothing
         }
